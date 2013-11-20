@@ -50,11 +50,16 @@
     <Compile Include="Classes\AClass_WithAParameterlessConstructor.cs" />
     <Compile Include="Classes\AClass_WithASystemValueAndReferenceTypeInTheConstructor_WhereTheReferenceTypeCanBeNull.cs" />
     <Compile Include="Classes\AClass_WithASystemValueAndReferenceTypeInTheConstructor_WhereTheReferenceTypeCannotBeNull.cs" />
+    <Compile Include="Classes\AClass_WithOnlyACustomInterfaceInTheConstructor_ThatCanBeNull.cs" />
+    <Compile Include="Classes\AClass_WithOnlyACustomInterfaceInTheConstructor_ThatCannotBeNull.cs" />
     <Compile Include="Classes\AClass_WithOnlyACustomReferenceTypeParameterInTheConstructor_ThatCanBeNull.cs" />
     <Compile Include="Classes\AClass_WithOnlyACustomReferenceTypeParameterInTheConstructor_ThatCannotBeNull.cs" />
+    <Compile Include="Classes\AClass_WithOnlyASystemInterfaceInTheConstructor_ThatCanBeNull.cs" />
+    <Compile Include="Classes\AClass_WithOnlyASystemInterfaceInTheConstructor_ThatCannotBeNull.cs" />
     <Compile Include="Classes\AClass_WithOnlyASystemReferenceTypeParameterInTheConstructor_ThatCanBeNull.cs" />
     <Compile Include="Classes\AClass_WithOnlyASystemReferenceTypeParameterInTheConstructor_ThatCannotBeNull.cs" />
     <Compile Include="Classes\AClass_WithOnlyASystemValueTypeParameterInTheConstructor.cs" />
+    <Compile Include="Classes\ACustomInterface.cs" />
     <Compile Include="Classes\ACustomReferenceType.cs" />
     <Compile Include="Classes\ACustomReferenceType_ThatTakesASystemValueTypeInItsConstructor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
