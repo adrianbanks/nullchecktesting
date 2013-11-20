@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NSubstitute">
+      <HintPath>packages\NSubstitute.1.6.1.0\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,8 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ArgNullCheckTest.cs" />
+    <Compile Include="CanBeNullAttribute.cs" />
+    <Compile Include="Classes\AClass_WithAParameterlessConstructor.cs" />
+    <Compile Include="Classes\AClass_WithOnlyASystemReferenceTypeParameterInTheConstructor_ThatCanBeNull.cs" />
+    <Compile Include="Classes\AClass_WithOnlyASystemReferenceTypeParameterInTheConstructor_ThatCannotBeNull.cs" />
+    <Compile Include="Classes\AClass_WithOnlyASystemValueTypeParameterInTheConstructor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
