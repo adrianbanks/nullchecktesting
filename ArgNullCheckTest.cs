@@ -27,20 +27,20 @@ namespace NullCheckTesting
 
                     if (!parameters.Any())
                     {
-                        Console.WriteLine("Skipping checking constructor: .ctor()");
-                        Console.WriteLine("  of type: {0}", type);
-                        Console.WriteLine("  because it has no parameters");
-                        Console.WriteLine();
+                        Trace("Skipping checking constructor: .ctor()");
+                        Trace("  of type: {0}", type);
+                        Trace("  because it has no parameters");
+                        Trace();
                         continue;
                     }
 
                     if (AllParametersAreValueTypes(parameters))
                     {
                         string parameterTypes = string.Join(", ", parameters.Select(p => p.ParameterType.Name));
-                        Console.WriteLine("Skipping checking constructor: .ctor({0})", parameterTypes);
-                        Console.WriteLine("  of type: {0}", type.Name);
-                        Console.WriteLine("  because it uses only value types");
-                        Console.WriteLine();
+                        Trace("Skipping checking constructor: .ctor({0})", parameterTypes);
+                        Trace("  of type: {0}", type.Name);
+                        Trace("  because it uses only value types");
+                        Trace();
                         continue;
                     }
 
@@ -52,11 +52,11 @@ namespace NullCheckTesting
                         if (parameter.ParameterType.IsValueType)
                         {
                             string parameterTypes = string.Join(", ", parameters.Select(p => p.ParameterType.Name));
-                            Console.WriteLine("Skipping checking constructor: .ctor({0})", parameterTypes);
-                            Console.WriteLine("  of type: {0}", type.Name);
-                            Console.WriteLine("  for parameter: {0}, {1}", i, parameter.ParameterType);
-                            Console.WriteLine("  because the parameter being tested is a value type");
-                            Console.WriteLine();
+                            Trace("Skipping checking constructor: .ctor({0})", parameterTypes);
+                            Trace("  of type: {0}", type.Name);
+                            Trace("  for parameter: {0}, {1}", i, parameter.ParameterType);
+                            Trace("  because the parameter being tested is a value type");
+                            Trace();
                             continue;
                         }
 
@@ -67,7 +67,7 @@ namespace NullCheckTesting
                         parameterValues[i] = null;
 
                         string testDescription = MakeTestDescription(type, parameters, parameterValues);
-                        Console.WriteLine(testDescription);
+                        Trace(testDescription);
 
                         if (checkingForAnAllowedNull)
                         {
@@ -179,6 +179,24 @@ namespace NullCheckTesting
             }
 
             return parameterValues;
+        }
+
+        private const bool traceEnabled = true;
+
+        private void Trace()
+        {
+            if (traceEnabled)
+            {
+                Console.WriteLine();
+            }
+        }
+
+        private void Trace(string format, params object[] args)
+        {
+            if (traceEnabled)
+            {
+                Console.WriteLine(format, args);
+            }
         }
     }
 }
