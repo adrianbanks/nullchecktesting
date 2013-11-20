@@ -4,11 +4,11 @@ namespace NullCheckTesting.Classes
 {
     public class AClass_WithOnlyACustomInterfaceInTheConstructor_ThatCannotBeNull
     {
-        public AClass_WithOnlyACustomInterfaceInTheConstructor_ThatCannotBeNull(ACustomInterface comparer)
+        public AClass_WithOnlyACustomInterfaceInTheConstructor_ThatCannotBeNull(ACustomInterface customInterface)
         {
-            if (comparer == null)
+            if (customInterface == null)
             {
-                throw new ArgumentNullException("comparer");
+                throw new ArgumentNullException("customInterface");
             }
         }
     }
